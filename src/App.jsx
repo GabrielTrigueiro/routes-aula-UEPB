@@ -4,20 +4,23 @@ import Home from './pages/Home'
 import Search from './pages/Search'
 import Navbar from './components/Navbar'
 import NotFound from './pages/NotFound'
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
 
   return (
-    <AuthProvider>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </AuthProvider>
+    <div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   )
 }
 
